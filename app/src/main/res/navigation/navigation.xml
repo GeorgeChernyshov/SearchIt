@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.searchit.screens.SearchFragment"
+        android:name="com.example.searchit.screens.search.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_resultsFragment"
@@ -13,6 +13,6 @@
     </fragment>
     <fragment
         android:id="@+id/resultsFragment"
-        android:name="com.example.searchit.screens.ResultsFragment"
+        android:name="com.example.searchit.screens.results.ResultsFragment"
         android:label="ResultsFragment" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.searchit.screens
+package com.example.searchit.screens.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
