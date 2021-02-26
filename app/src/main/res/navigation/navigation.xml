@@ -14,5 +14,10 @@
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.example.searchit.screens.results.ResultsFragment"
-        android:label="ResultsFragment" />
+        android:label="ResultsFragment" >
+        <argument
+            android:name="request"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

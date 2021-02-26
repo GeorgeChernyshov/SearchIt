@@ -14,7 +14,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ResultsViewModel : ViewModel() {
+class ResultsViewModel(val query: String) : ViewModel() {
 
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main )
@@ -27,12 +27,15 @@ class ResultsViewModel : ViewModel() {
     val items: LiveData<List<SearchResult>>
         get() = _items
 
+    val tmp = MutableLiveData<Boolean>()
+
     fun getSearchResults() {
         coroutineScope.launch {
-            var getPropertiesDeferred = SearchItApi.retrofitService.getProperties("test")
+            var getPropertiesDeferred = SearchItApi.retrofitService.getProperties(query)
             try {
                 var resultPage = getPropertiesDeferred.await()
                 _items.value = resultPage.items
+                tmp.value = true
             } catch (e: Exception) {
                 _status.value = "Failure: " + e.message
             }

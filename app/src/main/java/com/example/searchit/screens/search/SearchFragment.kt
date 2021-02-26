@@ -19,7 +19,8 @@ class SearchFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.searchButton.setOnClickListener {
             it?.let {
-                findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToResultsFragment())
+                findNavController().navigate(SearchFragmentDirections
+                    .actionSearchFragmentToResultsFragment(binding.searchBar.text.toString()))
             }
         }
 
